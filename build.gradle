@@ -22,6 +22,14 @@ configurations {
 
 repositories {
     mavenCentral()
+    // Spring AI
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+}
+
+// Spring AI
+ext {
+    set('springAiVersion', "1.1.0")
 }
 
 dependencies {
@@ -32,8 +40,16 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     implementation 'org.springframework.kafka:spring-kafka' // Spring Kafka
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai' // Spring AI
 
     testImplementation 'org.springframework.kafka:spring-kafka-test' // Spring Kafka Test
+}
+
+// Spring AI
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
+    }
 }
 
 tasks.named('test') {

@@ -14,9 +14,17 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      embedding:
+        options:
+          model: text-embedding-3-small
+
 logging:
   level:
     com.cstracker.issuetracker: DEBUG
     org:
       apache.kafka: INFO
       springframework.kafka: INFO
+
