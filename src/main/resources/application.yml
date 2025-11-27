@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: issue-tracker
+
+# Kafka Setting
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: cs-group # Consumer Group ID
+      auto-offset-reset: earliest # Read from first
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+logging:
+  level:
+    com.cstracker.issuetracker: DEBUG
+    org:
+      apache.kafka: INFO
+      springframework.kafka: INFO
