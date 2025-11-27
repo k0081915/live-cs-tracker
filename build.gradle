@@ -41,6 +41,9 @@ dependencies {
 
     implementation 'org.springframework.kafka:spring-kafka' // Spring Kafka
     implementation 'org.springframework.ai:spring-ai-starter-model-openai' // Spring AI
+    implementation 'org.springframework.ai:spring-ai-starter-vector-store-redis' // Redis
+
+    implementation 'redis.clients:jedis' // Redis 연결용 클라이언트
 
     testImplementation 'org.springframework.kafka:spring-kafka-test' // Spring Kafka Test
 }

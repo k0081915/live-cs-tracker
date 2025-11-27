@@ -21,6 +21,21 @@ spring:
         options:
           model: text-embedding-3-small
 
+    vectorstore:
+      redis:
+        index-name: "cs-issue-idx" # data repository name
+        prefix: "issue" # data key prefix
+        initialize-schema: true
+
+  # Redis connect setting
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      # password: # no password in local
+
+
+
 logging:
   level:
     com.cstracker.issuetracker: DEBUG
